@@ -1,3 +1,6 @@
+
+[![Clean Code Practices](https://github.com/aravind666/tame_of_thrones/actions/workflows/clean-code-practices.yml/badge.svg)](https://github.com/aravind666/tame_of_thrones/actions/workflows/clean-code-practices.yml)
+
 # Tame Of Thrones
 
 One among the six kings of Southeros wants to rule the whole Southeros
