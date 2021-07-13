@@ -121,7 +121,8 @@ checkstyle {
 check {
     dependsOn functionalTest
     dependsOn jacocoTestReport
-    dependsOn jacocoTestCoverageVerification
+// Since this is in development stage coverage is not gated
+//    dependsOn jacocoTestCoverageVerification
     dependsOn pmdMain
     dependsOn checkstyleMain
     dependsOn checkstyleTest
