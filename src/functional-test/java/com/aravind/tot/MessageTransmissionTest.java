@@ -33,4 +33,11 @@ public class MessageTransmissionTest extends BaseFunctionalTest {
         .contains("SPACE LAND ICE"));
   }
 
+  @Test
+  public void testFailedAllegianceMessageDelivery() {
+    App.main(new String[] {FunctionalTestConstants.NEGATIVE_INPUT});
+    assertTrue(getModifiedOutputStream().toString()
+        .contains("NONE"));
+  }
+
 }
