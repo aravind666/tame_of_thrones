@@ -21,7 +21,6 @@ class MessageValidatorTest {
     from = new Kingdom("SPACE", "GORILLA");
     badMessage = new Message("ABC", to, from, false);
     goodMessage = new Message("OFGWOFRIILSA", to, from, false);
-
   }
 
   @Test

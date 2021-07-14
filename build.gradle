@@ -76,6 +76,7 @@ task functionalTest(type: Test) {
     testLogging {
         events = ['FAILED', 'PASSED', 'SKIPPED', 'STANDARD_OUT']
     }
+    finalizedBy jacocoTestReport
 }
 
 test {

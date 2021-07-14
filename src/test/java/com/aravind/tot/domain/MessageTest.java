@@ -1,6 +1,7 @@
 package com.aravind.tot.domain;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +16,7 @@ class MessageTest {
   void setUp() {
     this.toKingdom = new Kingdom("LAND", "PANDA");
     this.fromKingdom = new Kingdom("SPACE", "OWL");
-    this.message = new Message("testing it", this.toKingdom, this.fromKingdom);
+    this.message = new Message("testing it", this.toKingdom, this.fromKingdom, false);
   }
 
   @Test

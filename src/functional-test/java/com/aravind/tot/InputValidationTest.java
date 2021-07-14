@@ -22,7 +22,7 @@ public class InputValidationTest extends BaseFunctionalTest {
 
   @Test
   public void shouldDisplayValidationForBadPath() throws IOException {
-    App.main(new String[] { FunctionalTestConstants.BAD_INPUT_PATH });
+    App.main(new String[] {FunctionalTestConstants.BAD_INPUT_PATH});
     assertTrue(getModifiedOutputStream().toString()
         .contains("resources/i_dont_exist.txt (No such file or directory)"));
   }

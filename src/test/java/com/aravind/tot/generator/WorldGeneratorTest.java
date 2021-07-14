@@ -1,6 +1,6 @@
 package com.aravind.tot.generator;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 import com.aravind.tot.domain.World;

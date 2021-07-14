@@ -21,8 +21,16 @@ public class MessageTransmissionTest extends BaseFunctionalTest {
 
   @Test
   public void testSuccessFullAllegianceMessageDelivery() {
-    App.main(new String[] { FunctionalTestConstants.POSITIVE_INPUT });
+    App.main(new String[] {FunctionalTestConstants.POSITIVE_INPUT});
     assertTrue(getModifiedOutputStream().toString()
         .contains("SPACE AIR LAND ICE"));
   }
+
+  @Test
+  public void testAnotherSuccessFullAllegianceMessageDelivery() {
+    App.main(new String[] {FunctionalTestConstants.POSITIVE_INPUT_2});
+    assertTrue(getModifiedOutputStream().toString()
+        .contains("SPACE LAND ICE"));
+  }
+
 }
