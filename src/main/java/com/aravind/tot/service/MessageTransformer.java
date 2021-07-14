@@ -15,7 +15,7 @@ public class MessageTransformer {
         .map(strings -> new Message(
             strings[1],
             getRecipientKingdom(strings[0], southeros),
-            from,false))
+            from, false))
         .map(MessageDecipher::decipher)
         .map(MessageValidator::validate)
         .filter(Message::getValid)

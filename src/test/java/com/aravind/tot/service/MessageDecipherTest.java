@@ -1,6 +1,6 @@
 package com.aravind.tot.service;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 import com.aravind.tot.domain.Kingdom;
@@ -23,8 +23,8 @@ class MessageDecipherTest {
 
   @Test
   void shouldDecryptMessageContentForCipher() {
-    MessageDecipher.decipher(message);
+    Message testMessage = MessageDecipher.decipher(message);
 
-    assertEquals(message.getContent(),"OLWL");
+    assertEquals(testMessage.getContent(), "OLWL");
   }
 }
