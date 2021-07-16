@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 public class MessageDecipher {
 
   private static final String ALPHABETS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  private static Map<Character, Character> decryptionMap = new HashMap<>();
+  private static final Map<Character, Character> decryptionMap = new HashMap<>();
 
   public static Message decipher(Message encrypted) {
     char[] content = encrypted.getContent().toCharArray();

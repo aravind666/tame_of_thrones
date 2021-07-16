@@ -34,6 +34,13 @@ public class MessageTransmissionTest extends BaseFunctionalTest {
   }
 
   @Test
+  public void testAllegianceMessageDeliveryWithSpaces() {
+    App.main(new String[] {FunctionalTestConstants.POSITIVE_INPUT_4});
+    assertTrue(getModifiedOutputStream().toString()
+        .contains("SPACE FIRE AIR WATER"));
+  }
+
+  @Test
   public void testFailedAllegianceMessageDelivery() {
     App.main(new String[] {FunctionalTestConstants.NEGATIVE_INPUT});
     assertTrue(getModifiedOutputStream().toString()

@@ -20,7 +20,7 @@ class MessageValidatorTest {
   void setUp() {
     to = new Kingdom("AIR", "OWL");
     from = new Kingdom("SPACE", "GORILLA");
-    badMessage = new Message("ABC", to, from, false);
+    badMessage = new Message("BKCDE", to, from, false);
     goodMessage = new Message("OFGWOFRIILSA", to, from, false);
   }
 

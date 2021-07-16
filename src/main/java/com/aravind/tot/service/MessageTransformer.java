@@ -11,9 +11,9 @@ public class MessageTransformer {
   public static List<Message> transform(List<String> rawMessages, Kingdom from, World southeros) {
     List<Message> collect = rawMessages
         .stream()
-        .map(message -> message.split(" "))
+        .map(message -> message.split(" ", 2))
         .map(strings -> new Message(
-            strings[1],
+            strings[1].replaceAll("\\s", ""),
             getRecipientKingdom(strings[0], southeros),
             from, false))
         .map(MessageDecipher::decipher)
