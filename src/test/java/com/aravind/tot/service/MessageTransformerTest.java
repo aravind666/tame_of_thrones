@@ -46,7 +46,7 @@ class MessageTransformerTest {
   void shouldValidateEachMessage() {
     List<Message> transformedMessages = MessageTransformer.transform(rawMessages, from, southeros);
 
-    assertTrue(transformedMessages.get(0).getValid());
+    assertTrue(transformedMessages.get(0).getAcknowledged());
   }
 
 

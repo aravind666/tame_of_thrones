@@ -15,13 +15,17 @@ public class MessageValidator {
     Map<String, Long> charCountMapEmblem = getCharCountMap(message.getTo().getEmblem());
     MapDifference<String, Long> intersection =
         Maps.difference(charCountMapMessage, charCountMapEmblem);
-    Map<String, MapDifference.ValueDifference<Long>>
-        difference = intersection.entriesDiffering();
-    Long countOfCharDifferences = difference.entrySet().stream()
-        .filter(entry -> entry.getValue().rightValue() >= entry.getValue().leftValue())
+    Map<String, MapDifference.ValueDifference<Long>> difference = intersection.entriesDiffering();
+
+    long countOfCharDifferences = difference.entrySet().stream()
+        .filter(entry -> entry.getValue().rightValue() <= entry.getValue().leftValue())
         .count();
-    Boolean acknowledge = intersection.entriesInCommon().size() > 0 && countOfCharDifferences == 0;
-    message.setValid(acknowledge);
+    Boolean hasEveryCharsInEmblem = intersection.entriesOnlyOnRight().size() == 0;
+    Boolean hasLeastSameCount = countOfCharDifferences == difference.size();
+
+    Boolean acknowledged = hasEveryCharsInEmblem && hasLeastSameCount;
+
+    message.setAcknowledged(acknowledged);
     return message;
   }
 

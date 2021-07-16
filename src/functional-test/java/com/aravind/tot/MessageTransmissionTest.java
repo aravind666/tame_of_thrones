@@ -23,21 +23,21 @@ public class MessageTransmissionTest extends BaseFunctionalTest {
   public void testSuccessFullAllegianceMessageDelivery() {
     App.main(new String[] {FunctionalTestConstants.POSITIVE_INPUT});
     assertTrue(getModifiedOutputStream().toString()
-        .contains("SPACE AIR LAND ICE"));
+        .contains("SPACE FIRE AIR WATER"));
   }
 
   @Test
   public void testAnotherSuccessFullAllegianceMessageDelivery() {
     App.main(new String[] {FunctionalTestConstants.POSITIVE_INPUT_2});
     assertTrue(getModifiedOutputStream().toString()
-        .contains("SPACE LAND ICE"));
+        .contains("SPACE LAND ICE FIRE"));
   }
 
   @Test
   public void testAllegianceMessageDeliveryWithSpaces() {
     App.main(new String[] {FunctionalTestConstants.POSITIVE_INPUT_4});
     assertTrue(getModifiedOutputStream().toString()
-        .contains("SPACE FIRE AIR WATER"));
+        .contains("SPACE AIR AIR AIR"));
   }
 
   @Test

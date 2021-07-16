@@ -5,14 +5,14 @@ public class Message {
   private final String content;
   private final Kingdom to;
   private final Kingdom from;
-  private Boolean valid;
+  private Boolean acknowledged;
 
-  public Message(String content, Kingdom to, Kingdom from, Boolean valid) {
+  public Message(String content, Kingdom to, Kingdom from, Boolean acknowledged) {
     this.cipher = to.getEmblem().length();
     this.content = content;
     this.to = to;
     this.from = from;
-    this.valid = valid;
+    this.acknowledged = acknowledged;
   }
 
   public Integer getCipher() {
@@ -31,11 +31,11 @@ public class Message {
     return from;
   }
 
-  public Boolean getValid() {
-    return valid;
+  public Boolean getAcknowledged() {
+    return acknowledged;
   }
 
-  public void setValid(Boolean valid) {
-    this.valid = valid;
+  public void setAcknowledged(Boolean acknowledged) {
+    this.acknowledged = acknowledged;
   }
 }

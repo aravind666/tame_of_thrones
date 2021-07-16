@@ -28,13 +28,13 @@ class MessageValidatorTest {
   void givenBadMessageShouldSetValidFlagToFalse() {
     MessageValidator.validate(badMessage);
 
-    assertFalse(badMessage.getValid());
+    assertFalse(badMessage.getAcknowledged());
   }
 
   @Test
   void givenGoodMessageShouldSetValidFlagToTrue() {
     MessageValidator.validate(goodMessage);
 
-    assertTrue(goodMessage.getValid());
+    assertTrue(goodMessage.getAcknowledged());
   }
 }
