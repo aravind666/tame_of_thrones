@@ -1659,8 +1659,8 @@ into subcomponents.]]>
         </description>
         <priority>3</priority>
         <properties>
-            <property name="classReportLevel" value="30" />
-            <property name="methodReportLevel" value="3" />
+            <property name="classReportLevel" value="40" />
+            <property name="methodReportLevel" value="4" />
             <property name="cycloOptions" value="" />
         </properties>
         <example>

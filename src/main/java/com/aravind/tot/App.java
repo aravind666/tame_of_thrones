@@ -32,13 +32,15 @@ public class App {
       String allegiances = listOfMessages.stream()
           .map(message -> message.getTo().getName() + " ")
           .collect(Collectors.joining());
-      System.out.println(getOutputMessage(allegiances, megalomaniac.getName()));
+      Boolean successFullInAllegiance = allegiances.trim().isEmpty() || listOfMessages.size() < 3;
+      System.out.println(getOutputMessage(allegiances, successFullInAllegiance, megalomaniac));
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
   }
 
-  private static String getOutputMessage(String allegiances, String from) {
-    return allegiances.trim().isEmpty() ? "NONE" : from + " " + allegiances;
+  private static String getOutputMessage(String allegiances, Boolean successFullInAllegiance,
+                                         Kingdom from) {
+    return successFullInAllegiance ? "NONE" : from.getName() + " " + allegiances;
   }
 }

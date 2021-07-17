@@ -19,6 +19,7 @@ public class MessageTransformer {
         .map(MessageDecipher::decipher)
         .map(MessageValidator::validate)
         .filter(Message::getAcknowledged)
+        .distinct()
         .collect(Collectors.toList());
     return collect;
   }

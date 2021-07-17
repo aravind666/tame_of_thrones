@@ -34,10 +34,10 @@ public class MessageTransmissionTest extends BaseFunctionalTest {
   }
 
   @Test
-  public void testAllegianceMessageDeliveryWithSpaces() {
+  public void testAllegianceShouldBeAtleastFromThreeKingdoms() {
     App.main(new String[] {FunctionalTestConstants.POSITIVE_INPUT_4});
     assertTrue(getModifiedOutputStream().toString()
-        .contains("SPACE AIR AIR AIR"));
+        .contains("NONE"));
   }
 
   @Test

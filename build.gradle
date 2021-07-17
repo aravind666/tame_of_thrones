@@ -88,7 +88,7 @@ test {
 pmd {
     consoleOutput = true
     toolVersion = "6.21.0"
-    ruleSets = ["${rootDir}/code-quality/tame-of-thrones-rules.xml"]
+    ruleSets = ["${rootDir}/code-quality/tame-of-thrones-rules.xml", ]
 }
 
 checkstyle {

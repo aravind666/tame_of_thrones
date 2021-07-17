@@ -1,5 +1,7 @@
 package com.aravind.tot.domain;
 
+import java.util.Objects;
+
 public class Message {
   private final Integer cipher;
   private final String content;
@@ -29,6 +31,27 @@ public class Message {
 
   public Kingdom getFrom() {
     return from;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Message)) {
+      return false;
+    }
+    Message message = (Message) o;
+    return Objects.equals(getCipher(), message.getCipher())
+        && Objects.equals(getContent(), message.getContent())
+        && Objects.equals(getTo(), message.getTo())
+        && Objects.equals(getFrom(), message.getFrom())
+        && Objects.equals(getAcknowledged(), message.getAcknowledged());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getCipher(), getContent(), getTo(), getFrom(), getAcknowledged());
   }
 
   public Boolean getAcknowledged() {
